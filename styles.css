@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #faf3dd;
+}
+
+.navbar {
+  background-color: #4b2405;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;               /* Ligger i rad */
+  align-items: center;         /* Vertikalt centrerade */
+  justify-content: flex-start; /* ⬅️ Lägger allt till vänster */
+}
+
+.navbar .logo img {
+  display: block;
+  width: auto;
+  height: 60px;               /* Bättre än procentuell bredd */
+  margin-right: 20px;         /* Luft mellan loggan och meny */
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  display: block;
+  padding: 24px 20px; 
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+  font-size: 1.3rem;
+}
+
+.navbar a:hover {
+  background-color: #513009;
+}
