@@ -6,6 +6,11 @@ body {
 
 .navbar {
   background-color: #4b2405;
+  height: 80px;             
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  overflow: visible;        
 }
 
 .navbar ul {
@@ -13,17 +18,18 @@ body {
   margin: 0;
   padding: 0;
 
-  display: flex;               /* Ligger i rad */
-  align-items: center;         /* Vertikalt centrerade */
-  justify-content: flex-start; /* ⬅️ Lägger allt till vänster */
+  display: flex;               
+  align-items: center;         
+  justify-content: flex-start; 
 }
 
 .navbar .logo img {
-  display: block;
+  height: 120px;            
   width: auto;
-  height: 60px;               /* Bättre än procentuell bredd */
-  margin-right: 20px;         /* Luft mellan loggan och meny */
+  margin-right: 20px;
+  margin-top: 20px;        
 }
+
 
 .navbar li {
   margin: 0;
@@ -38,6 +44,11 @@ body {
   font-size: 1.3rem;
 }
 
-.navbar a:hover {
-  background-color: #513009;
+
+.contact-info {
+  background-color: #F4D35E;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2rem;
 }
