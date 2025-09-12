@@ -2,8 +2,13 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #faf3dd;
-}
+  background-image: url('chips_tecknad.svg');
+  background-repeat: repeat;
+  background-size: 17%;
+  background-position: center;
 
+  background-blend-mode: overlay; 
+}
 
 .navbar ul {
   list-style: none;
@@ -14,20 +19,24 @@ body {
   align-items: center;         
   justify-content: flex-start; 
   font-size: 2vw;
+  gap: 1.2vw;    
 }
 
 .navbar {
   background-color: #4b2405;
   display: flex;
   align-items: center;   
+  justify-content: space-between;
   padding: 0 20px;
-  height: 4vw;         
+  height: 5vw;         
 }
 
 .navbar .logo img {
-  margin-top: 33%;
-  height: 6vw;          
-  width: auto;       
+  height: 5.6vw;          
+  width: auto;     
+  margin-top: 10%;   
+  justify-content: center;
+  text-align: center;
 }
 
 .navbar a {
@@ -37,25 +46,67 @@ body {
   text-decoration: none;
   color: white;
   transition: background-color 0.3s;
-  font-size: 1.3rem;
+  font-size: 0.9vw;   
   font-family: cursive;
+  padding: 0 10px;  
+  line-height: normal;  
 }
 
 .navbar a:hover {
   font-style: italic;
 }
 
+.home-container {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+}
+.home-text {
+  flex: 1;
+  padding-right: 10%;
+  font-size: 1.5vw;
+  color: #000000;
+}
+
+.highlight {
+  color: #f6b800;      
+  font-style: italic;
+  font-weight: 700;      
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+  letter-spacing: 1px;    
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4b2405;
+  width: 20%;
+  height: 5%;
+  border-radius: 10%;
+  color: white;
+  text-decoration: none;
+  margin-top: 20%;
+  font-size: 1.2vw;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: #854512;
+  
+}
+
 .contact-container {
   max-width: 80%;
-  margin: 50px auto;
+  margin-top: 3%;
+  margin-left: 7%;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 5%;
-  align-items: left;    
+  align-items: flex-start;    
 }
 
 .contact-header {
@@ -70,7 +121,7 @@ body {
   background-color: #4b2405;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 1vw;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
@@ -84,16 +135,16 @@ body {
 .contact-form form {
   display: flex;
   flex-direction: column;    
-  width: 30vw;    
+  width: 33vw;    
   gap: 15px;                  
   background-color: #fff8e7; 
-  padding: 25px;             
+  padding: 2vw;             
   border-radius: 10px;      
   box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
 
 .contact-form h2 {
-  font-size: 1.2vw;
+  font-size: 1.5vw;
 }
 
 .contact-info {
@@ -147,13 +198,14 @@ footer {
   background-color: #6A994E;
   color: white;
   text-align: center;
+   align-items: center;
   padding: 20px 0;       
   position: fixed;       
   bottom: 0;
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  height: 10%;
+  height: 8%;
 }
 
 @media (max-width: 768px) {
