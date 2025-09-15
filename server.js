@@ -56,7 +56,13 @@ db.serialize(() => {
   });
 });
 
+app.use(express.static(__dirname));
+
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // User sign up
 app.post('/signup', (req, res) => {
@@ -132,6 +138,6 @@ app.delete('/products/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
