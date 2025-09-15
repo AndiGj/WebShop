@@ -27,7 +27,7 @@ db.serialize(() => {
 
   db.run(`CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    märke TEXT NOT NULL,
+    brand TEXT NOT NULL,
     smak TEXT NOT NULL,
     kategori TEXT NOT NULL,
     storlek TEXT NOT NULL,
