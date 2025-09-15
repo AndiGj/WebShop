@@ -5,7 +5,7 @@
       "märke": "Lays",
       "kategori": "Potatischips",
       "storlek": "200g",
-      "bild": "img/Lays-Sourcream.png",
+      "bild": "Img/Lays-Sourcream.png",
       "price": 25.00
     },
     {
@@ -13,7 +13,7 @@
       "märke": "Estrella",
       "kategori": "Potatischips",
       "storlek": "150g",
-      "bild": "img/Lays-Sourcream.png",
+      "bild": "Img/Lays-Sourcream.png",
       "price": 25.00
     },
     {
@@ -21,7 +21,7 @@
       "märke": "Pringles",
       "kategori": "Potatischips",
       "storlek": "165g",
-      "bild": "img/Lays-Sourcream.png",
+      "bild": "Img/Lays-Sourcream.png",
       "price": 25.00
     },
     {
@@ -29,7 +29,7 @@
       "märke": "Kettle Chips",
       "kategori": "Potatischips",
       "storlek": "180g",
-      "bild": "img/Lays-Sourcream.png",
+      "bild": "Img/Lays-Sourcream.png",
       "price": 25.00
     },
     {
@@ -37,7 +37,7 @@
       "märke": "Taffel",
       "kategori": "Potatischips",
       "storlek": "175g",
-      "bild": "img/Lays-Sourcream.png",
+      "bild": "Img/Lays-Sourcream.png",
       "price": 25.00
     },
     {
@@ -45,7 +45,7 @@
       "märke": "Estrella",
       "kategori": "Potatischips",
       "storlek": "150g",
-      "bild": "img/Lays-Sourcream.png",
+      "bild": "Img/Lays-Sourcream.png",
       "price": 25.00
     }
   ]
