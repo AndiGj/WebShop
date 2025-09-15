@@ -5,42 +5,48 @@
       "märke": "Lays",
       "kategori": "Potatischips",
       "storlek": "200g",
-      "bild": "img/Lays-Sourcream.png"
+      "bild": "img/Lays-Sourcream.png",
+      "price": 25.00
     },
     {
       "smak": "Salt",
       "märke": "Estrella",
       "kategori": "Potatischips",
       "storlek": "150g",
-      "bild": "img/Lays-Sourcream.png"
+      "bild": "img/Lays-Sourcream.png",
+      "price": 25.00
     },
     {
       "smak": "Barbecue",
       "märke": "Pringles",
       "kategori": "Potatischips",
       "storlek": "165g",
-      "bild": "img/Lays-Sourcream.png"
+      "bild": "img/Lays-Sourcream.png",
+      "price": 25.00
     },
     {
       "smak": "Cheddar & Sour Cream",
       "märke": "Kettle Chips",
       "kategori": "Potatischips",
       "storlek": "180g",
-      "bild": "img/Lays-Sourcream.png"
+      "bild": "img/Lays-Sourcream.png",
+      "price": 25.00
     },
     {
       "smak": "Salt & Vinegar",
       "märke": "Taffel",
       "kategori": "Potatischips",
       "storlek": "175g",
-      "bild": "img/Lays-Sourcream.png"
+      "bild": "img/Lays-Sourcream.png",
+      "price": 25.00
     },
     {
       "smak": "Chili",
       "märke": "Estrella",
       "kategori": "Potatischips",
       "storlek": "150g",
-      "bild": "img/Lays-Sourcream.png"
+      "bild": "img/Lays-Sourcream.png",
+      "price": 25.00
     }
   ]
 }

@@ -24,11 +24,12 @@ db.serialize(() => {
 
   db.run(`CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    description TEXT,
+    märke TEXT NOT NULL,
+    smak TEXT NOT NULL,
+    kategori TEXT NOT NULL,
+    storlek TEXT NOT NULL,
     price REAL NOT NULL,
-    stock INTEGER NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    bild
   )`);
 
   // Ensure admin user exists
@@ -56,13 +57,7 @@ db.serialize(() => {
   });
 });
 
-app.use(express.static(__dirname));
-
 app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
 
 // User sign up
 app.post('/signup', (req, res) => {
@@ -138,6 +133,6 @@ app.delete('/products/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
