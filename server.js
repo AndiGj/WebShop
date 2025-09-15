@@ -5,6 +5,9 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
+// Serve static files (HTML, CSS, JS, images)
+app.use(express.static(__dirname));
+
 const adminUsername = 'admin';
 const adminPassword = 'admin123';
 const adminEmail = 'admin@webshop.com';
@@ -29,8 +32,27 @@ db.serialize(() => {
     kategori TEXT NOT NULL,
     storlek TEXT NOT NULL,
     price REAL NOT NULL,
-    bild
+    bild TEXT
   )`);
+
+
+  db.get('SELECT COUNT(*) AS count FROM products', (err, row) => {
+   if (err) {
+      console.error('Error checking products table:', err);
+      return;
+    }
+   if (row.count === 0) {
+      const fs = require('fs');
+      const snacks = JSON.parse(fs.readFileSync(path.join(__dirname, 'snacks.json'), 'utf8'));
+      snacks.chips.forEach(chip => {
+        db.run(
+          `INSERT INTO products (märke, smak, kategori, storlek, price, bild) VALUES (?, ?, ?, ?, ?, ?)`,
+          [chip.märke, chip.smak, chip.kategori, chip.storlek, chip.price, chip.bild]
+        );
+     });
+      console.log('Imported chips from snacks.json');
+    }
+    });
 
   // Ensure admin user exists
 
@@ -57,7 +79,13 @@ db.serialize(() => {
   });
 });
 
+
 app.use(express.json());
+
+// Serve index.html for the root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // User sign up
 app.post('/signup', (req, res) => {

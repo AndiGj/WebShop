@@ -1,18 +1,17 @@
 // Hämta kundvagn från localStorage eller skapa tom
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-fetch('snacks.json')
+fetch('/products')
   .then(response => response.json())
   .then(data => {
     const row = document.getElementById('snacks-row');
 
-    data.chips.forEach(snack => {
+    data.forEach(snack => {
       const col = document.createElement('div');
       col.className = 'col-md-4 mb-4';
 
       col.innerHTML = `
         <div class="card h-100 border-warning shadow-sm text-center">
-          
           <div class="card-body">
             <h5 class="card-title fw-bold mb-2">${snack.märke}</h5>
             <p class="card-text text-muted mb-2">
@@ -39,4 +38,4 @@ fetch('snacks.json')
       row.appendChild(col);
     });
   })
-  .catch(error => console.error('Kunde inte ladda JSON:', error));
+  .catch(error => console.error('Kunde inte ladda produkter:', error));
