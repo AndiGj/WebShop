@@ -80,7 +80,7 @@ db.serialize(() => {
 });
 
 
-app.use(express.json());
+app.use(express.json({limit: '1mb'}));
 
 // Serve index.html for the root route
 app.get('/', (req, res) => {
@@ -129,13 +129,31 @@ app.get('/products', (req, res) => {
   });
 });
 
-// Add a product
+
+// Add a product (with PNG upload to Img folder)
 app.post('/products', (req, res) => {
-  const { name, description, price, stock } = req.body;
-  const sql = `INSERT INTO products (name, description, price, stock) VALUES (?, ?, ?, ?)`;
-  db.run(sql, [name, description, price, stock], function(err) {
-    if (err) return res.status(500).json({ error: 'Failed to add product' });
-    res.status(201).json({ id: this.lastID });
+  const { märke, smak, kategori, storlek, price, bild } = req.body;
+  if (!märke || !smak || !kategori || !storlek || !price || !bild) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+  // Save PNG to Img folder
+  const matches = bild.match(/^data:image\/png;base64,(.+)$/);
+  if (!matches) {
+    return res.status(400).json({ error: 'Invalid image format' });
+  }
+  const base64Data = matches[1];
+  const filename = `product_${Date.now()}_${Math.floor(Math.random()*10000)}.png`;
+  const filePath = path.join(__dirname, 'Img', filename);
+  const fileDbPath = `Img/${filename}`;
+  const fs = require('fs');
+  fs.writeFile(filePath, base64Data, 'base64', (err) => {
+    if (err) return res.status(500).json({ error: 'Failed to save image' });
+    // Insert product into DB
+    const sql = `INSERT INTO products (märke, smak, kategori, storlek, price, bild) VALUES (?, ?, ?, ?, ?, ?)`;
+    db.run(sql, [märke, smak, kategori, storlek, price, fileDbPath], function(err) {
+      if (err) return res.status(500).json({ error: 'Failed to add product' });
+      res.status(201).json({ id: this.lastID });
+    });
   });
 });
 
