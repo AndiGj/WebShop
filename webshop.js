@@ -26,19 +26,54 @@ fetch('/products')
         </div>
       `;
 
-      // Lägg till click-event direkt här
+     // Lägg till click-event direkt här
       const addButton = col.querySelector('.add-to-cart');
       addButton.addEventListener('click', () => {
         cart.push(snack);
         localStorage.setItem('cart', JSON.stringify(cart)); // uppdatera localStorage
         alert(`${snack.märke} har lagts till i kundvagnen!`);
-        console.log('Kundvagn:', cart);
+        addProductToCartPreview(snack);
+        updateCartTotal();
       });
 
       row.appendChild(col);
     });
   })
   .catch(error => console.error('Kunde inte ladda produkter:', error));
+
+  function addProductToCartPreview(snack) {
+  const cartItems = document.getElementById('cart-items');
+
+  const item = document.createElement('div');
+  item.className = 'border p-2 mb-2 bg-light rounded';
+  item.innerHTML = `
+  <strong>${snack.märke}</strong> - ${snack.smak}, ${snack.storlek} <br>
+  <span class="text-muted">${snack.kategori}</span><br>
+  <span class="fw-bold">${snack.price} kr</span><br>
+  <img src="${snack.bild}" class="card-img-top" style="width:50px; height:auto;" alt="${snack.smak}">
+`;
+
+
+  cartItems.appendChild(item);
+}
+
+// Ladda befintlig kundvagn vid sidstart
+window.addEventListener('DOMContentLoaded', () => {
+  cart.forEach(snack => addProductToCartPreview(snack));
+});
+
+function updateCartTotal() {
+  const totalDiv = document.getElementById('cart-total');
+  
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const total = cart.reduce((sum, snack) => sum + Number(snack.price), 0);
+
+  totalDiv.innerHTML = `
+    <h3>Total: ${total} kr</h3>
+  `;
+}
+
 
 
 

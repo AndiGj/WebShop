@@ -4,26 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webshop</title>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="my-navbar">
     <ul>
       <li class="logo">
-        <a href="index.html"><img src="/Img/logo.svg" alt="logo"></a>
+        <a href="index.html">
+          <img src="/Img/logo.svg" alt="logo">
+        </a>
       </li>
       <li><a href="products.html">Våra produkter</a></li>
       <li><a href="about.html">Om oss</a></li>
       <li><a href="contact.html">Kontakt</a></li>
+      <li><a href="login.html">Logga in</a></li>
     </ul>
-
-    <div class="cart-icon">
-      <img src="img/cart.svg" alt="Cart" onclick="location.href='cart.html'">
-      <span id="cart-count"></span>
-    </div>
+    <img src="img/cart.svg" alt="" width="3%" onclick="location.href='cart.html'" style="cursor: pointer; margin-right: 2vw;">
   </div>
 
-  <div id="products-row"></div>
+  <div id="cart-preview" class="container my-5">
+  <h2>Kundvagn</h2>
+  <div class="row">
+    <!-- Produkterna till vänster -->
+    <div id="cart-items" class="col-md-8"></div>
+
+    <!-- Totalen till höger -->
+    <div id="cart-total" class="col-md-4">
+      <h3>Total: 0 kr</h3>
+    </div>
+  </div>
+</div>
 
   <script src="webshop.js"></script>
 </body>
