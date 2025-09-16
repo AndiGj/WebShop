@@ -115,7 +115,8 @@ app.post('/login', (req, res) => {
   db.get(sql, [username, password], (err, user) => {
     if (err) return res.status(500).json({ error: 'Failed to log in' });
     if (!user) return res.status(401).json({ error: 'Invalid credentials' });
-    res.json({ id: user.id, username: user.username, email: user.email });
+    const isAdmin = user.username === 'admin';
+    res.json({ id: user.id, username: user.username, email: user.email, isAdmin });
   });
 });
 

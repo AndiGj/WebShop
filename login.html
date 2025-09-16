@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div class="my-navbar">
+    <div class="my-navbar">
     <ul>
       <li class="logo">
         <a href="index.html">
@@ -18,22 +18,21 @@
       <li><a href="products.html">Våra produkter</a></li>
       <li><a href="about.html">Om oss</a></li>
       <li><a href="contact.html">Kontakt</a></li>
-      <li><a href="login.html">Logga in</a></li>
     </ul>
     <img src="img/cart.svg" alt="" width="3%" onclick="location.href='cart.html'" style="cursor: pointer; margin-right: 2vw;">
   </div>
 
-  <div class="home-container">
-  <div class="home-text">
-    <h1>Välkommen till vår Webshop!</h1>
-    <p>Upptäck våra <span class="highlight">krispiga</span> snacks och annat gott</p>
-    <a href="products.html" class="button">Shoppa nu!</a>
-  </div>
-  <img src="/Img/logo.svg" alt="logo" width="40%">
-</div>
-    <footer>
-        <p>&copy; 2025 Snacky AB. Alla rättigheter förbehållna.</p>
-    </footer>
-
 </body>
+<div class="login-container">
+  <h2>Logga in</h2>
+  <form id="loginForm">
+    <label for="username">Användarnamn:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Lösenord:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit">Logga in</button>
+    <p id="loginError" style="color:red;"></p>
+  </form>
+</div>
+<script src="webshop.js"></script>
 </html>

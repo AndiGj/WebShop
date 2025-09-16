@@ -39,3 +39,29 @@ fetch('/products')
     });
   })
   .catch(error => console.error('Kunde inte ladda produkter:', error));
+
+
+
+  //Login form
+   document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const res = await fetch('/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    const data = await res.json();
+    if (res.ok) {
+      if (data.isAdmin) {
+        localStorage.setItem('isAdmin', 'true');
+        window.location.href = 'adminpanel.html';
+      } else {
+        localStorage.setItem('isAdmin', 'false');
+        window.location.href = 'index.html';
+      }
+    } else {
+      document.getElementById('loginError').textContent = data.error || 'Fel vid inloggning';
+    }
+  });
