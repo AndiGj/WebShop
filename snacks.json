@@ -13,7 +13,7 @@
       "märke": "Estrella",
       "kategori": "Potatischips",
       "storlek": "150g",
-      "bild": "Img/Lays-Sourcream.png",
+      "bild": "Img/estrella-salt.png",
       "price": 25.00
     },
     {
@@ -21,7 +21,7 @@
       "märke": "Pringles",
       "kategori": "Potatischips",
       "storlek": "165g",
-      "bild": "Img/Lays-Sourcream.png",
+      "bild": "Img/pringels-bbq.png",
       "price": 25.00
     },
     {
@@ -29,7 +29,7 @@
       "märke": "Kettle Chips",
       "kategori": "Potatischips",
       "storlek": "180g",
-      "bild": "Img/Lays-Sourcream.png",
+      "bild": "Img/kettle-cheddar.png",
       "price": 25.00
     },
     {
@@ -37,16 +37,48 @@
       "märke": "Taffel",
       "kategori": "Potatischips",
       "storlek": "175g",
-      "bild": "Img/Lays-Sourcream.png",
+      "bild": "Img/taffel-saltvinegar.png",
       "price": 25.00
     },
     {
-      "smak": "Chili",
+      "smak": "Ranch",
       "märke": "Estrella",
       "kategori": "Potatischips",
       "storlek": "150g",
-      "bild": "Img/Lays-Sourcream.png",
+      "bild": "Img/estrella-ranch.png",
       "price": 25.00
+    },
+    {
+      "smak": "Paprika",
+      "märke": "Pringles",
+      "kategori": "Potatischips",
+      "storlek": "160g",
+      "bild": "Img/pringels-paprika.png",
+      "price": 28.00
+    },
+    {
+      "smak": "Havssalt",
+      "märke": "Kettle Chips",
+      "kategori": "Potatischips",
+      "storlek": "180g",
+      "bild": "Img/kettle-havssalt.png",
+      "price": 30.00
+    },
+    {
+      "smak": "Ranch",
+      "märke": "Lays",
+      "kategori": "Potatischips",
+      "storlek": "200g",
+      "bild": "Img/lays-ranch.png",
+      "price": 27.00
+    },
+    {
+      "smak": "Grill",
+      "märke": "Estrella",
+      "kategori": "Potatischips",
+      "storlek": "150g",
+      "bild": "Img/estrella-grill.png",
+      "price": 26.00
     }
   ]
 }

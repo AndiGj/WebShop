@@ -20,7 +20,8 @@ fetch('/products')
               Kategori: <span class="fw-semibold">${snack.kategori}</span><br>
               Storlek: <span class="fw-semibold">${snack.storlek}</span>
             </p>
-            <img src="${snack.bild}" class="card-img-top" alt="${snack.smak}">
+            <img src="${snack.bild}" class="snack-img" alt="${snack.smak}">
+
             <p class="text-brown fw-bold h5 mt-4 mb-4">${snack.price} kr</p>
             <button class="btn btn-warning btn-sm px-4 add-to-cart">Lägg i kundvagn</button>
           </div>
@@ -52,7 +53,9 @@ function addProductToCartPreview(snack) {
     <div>
       <strong>${snack.märke}</strong> - ${snack.smak}, ${snack.storlek}<br>
       <span class="text-muted">${snack.kategori}</span><br>
-      <img src="${snack.bild}" class="card-img-top" style="width:50px; height:auto;" alt="${snack.smak}">
+      <img src="${snack.bild}" class="card-img-top" 
+     style="width:auto; height:100px; margin-left: 20px;" 
+     alt="${snack.smak}">
       <span class="fw-bold">${snack.price} kr</span>
        
     </div>

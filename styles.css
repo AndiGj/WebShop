@@ -203,6 +203,15 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* extra skugga vid hover */
 }
 
+.snack-img {
+  max-width: 150px;    /* max bredd */
+  max-height: 150px;   /* max höjd */
+  width: auto;         /* behåll proportioner */
+  height: auto;        /* behåll proportioner */
+  display: block;
+  margin: 0 auto;      /* centrerar bilden */
+}
+
 footer {
   background-color: #6A994E;
   color: white;
