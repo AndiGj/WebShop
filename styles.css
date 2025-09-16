@@ -133,10 +133,12 @@ body {
 .contact-form form {
   display: flex;
   flex-direction: column;    
-  width: 33vw;    
-  gap: 15px;                  
+  width: 100%;                /* fyller utrymmet */
+  width: 30vw;   
+  height: 20vw;       /* aldrig bredare än 500px */
+  gap: 1vw;                  
   background-color: #fff8e7; 
-  padding: 2vw;             
+  padding: 2vw;              
   border-radius: 10px;      
   box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }

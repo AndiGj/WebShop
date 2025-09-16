@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webshop</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <div class="my-navbar">
+  <div class="my-navbar">
     <ul>
       <li class="logo">
-        <a href="index.html">
-          <img src="/Img/logo.svg" alt="logo">
-        </a>
+        <a href="index.html"><img src="/Img/logo.svg" alt="logo"></a>
       </li>
       <li><a href="products.html">Våra produkter</a></li>
       <li><a href="about.html">Om oss</a></li>
       <li><a href="contact.html">Kontakt</a></li>
     </ul>
-    <img src="img/cart.svg" alt="" width="3%" onclick="location.href='cart.html'" style="cursor: pointer; margin-right: 2vw;">
+
+    <div class="cart-icon">
+      <img src="img/cart.svg" alt="Cart" onclick="location.href='cart.html'">
+      <span id="cart-count"></span>
+    </div>
   </div>
 
+  <div id="products-row"></div>
+
+  <script src="webshop.js"></script>
 </body>
 </html>

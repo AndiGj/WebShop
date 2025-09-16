@@ -1,0 +1,11 @@
+POST http//localhost:3000/products
+Content-Type: application/json
+
+{
+  "märke": "Estrella",
+  "smak": "Sourcream & Onion",
+  "kategori": "Potatischips",
+  "storlek": "150g",
+  "price": 25.00,
+  "bild": "https://example.com/images/estrella_sourcream_onion.png"
+}
