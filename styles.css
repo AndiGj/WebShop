@@ -194,6 +194,15 @@ body {
   font-size: 1vw;
 }
 
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* mjuk övergång */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* hoppar upp 10px */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* extra skugga vid hover */
+}
+
 footer {
   background-color: #6A994E;
   color: white;
