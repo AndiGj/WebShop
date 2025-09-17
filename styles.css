@@ -243,16 +243,49 @@ footer {
   height: 8%;
 }
 
-@media (max-width: 768px) {
-  .contact-info {
-    font-size: 50%;       
-    padding: 8px 2%;      
+@media (max-width: 992px) {
+  .home-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .home-text {
+    padding-right: 0;
+    text-align: center;
+  }
+  .home-text h1 {
+    font-size: 2rem;
+  }
+  .button {
+    width: 80%;
+    font-size: 1rem;
+    margin: 10px 0;
   }
 }
 
-@media (max-width: 480px) {
-  .contact-info {
-    font-size: 50%;      
-    padding: 6px 2%;
+@media (max-width: 768px) {
+  .my-navbar ul {
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+  }
+  .my-navbar ul.show {
+    display: flex;
+  }
+  .home-text h1 {
+    font-size: 1.8rem;
+  }
+  .home-text p {
+    font-size: 1rem;
+  }
+  .cart-count {
+    min-width: 14px;
+    min-height: 14px;
+    font-size: 0.7rem;
+    top: -5px;    /* flytta lite uppåt */
+    right: -5px;  /* flytta lite åt höger */
   }
 }
+
