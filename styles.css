@@ -54,6 +54,23 @@ body {
   font-style: italic;
 }
 
+.cart-count {
+  position: absolute;
+  top: 2%;              
+  right: 2%;            
+  background-color: #ff0000;
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;        
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;       
+  font-weight: bold;
+  line-height: 1;         /* fixar vertikal centrering */
+  padding: 0.1%;           /* liten buffert så texten inte kläms */
+}
 .home-container {
   display: flex;
   flex-direction: row;
