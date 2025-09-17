@@ -107,7 +107,7 @@ window.addEventListener('DOMContentLoaded', () => {
   updateCartTotal();
 });
 
-// Login form (behåller din befintliga kod)
+// Login form 
 document.getElementById('loginForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const username = document.getElementById('username').value;

@@ -107,3 +107,9 @@ fetch('/products')
     renderProductsAndAddCard(data);
   })
   .catch(error => console.error('Kunde inte ladda produkter:', error));
+
+  
+document.getElementById('logoutBtn').onclick = function() {
+    localStorage.removeItem('isAdmin');
+    window.location.href = 'index.html';
+};
