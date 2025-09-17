@@ -130,3 +130,31 @@ document.getElementById('loginForm')?.addEventListener('submit', async function(
     document.getElementById('loginError').textContent = data.error || 'Fel vid inloggning';
   }
 });
+
+
+// Signup form logic
+document.getElementById('signupForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+  const errorP = document.getElementById('signupError');
+  if (!username || !password || !email) {
+    errorP.textContent = 'Fyll i alla fält';
+    return;
+  }
+  const res = await fetch('/signup', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password, email })
+  });
+  const data = await res.json();
+  if (res.ok) {
+    errorP.style.color = 'green';
+    errorP.textContent = 'Konto skapat! Du skickas till inloggning...';
+    setTimeout(() => window.location.href = 'login.html', 1200);
+  } else {
+    errorP.style.color = 'red';
+    errorP.textContent = data.error || 'Kunde inte skapa konto';
+  }
+});
