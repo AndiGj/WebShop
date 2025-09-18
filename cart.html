@@ -10,7 +10,12 @@
 </head>
 <body>
   <div class="my-navbar">
-    <ul>
+    <button class="hamburger" aria-label="Meny" aria-expanded="false" aria-controls="navbar-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="navbar-links">
       <li class="logo">
         <a href="index.html">
           <img src="/Img/logo.svg" alt="logo">
@@ -21,8 +26,10 @@
       <li><a href="contact.html">Kontakt</a></li>
       <li><a href="login.html">Logga in</a></li>
     </ul>
-    <img src="Img/cart.svg" alt="" width="3%" onclick="location.href='cart.html'" style="cursor: pointer; margin-right: 2vw;">
-    <div id="cart-count" class="cart-count">0</div>
+    <div class="cart-container">
+      <img src="Img/cart.svg" alt="Kundvagn" width="36" onclick="location.href='cart.html'" style="cursor: pointer;">
+      <div id="cart-count" class="cart-count">0</div>
+    </div>
   </div>
 
   <div id="cart-preview" class="container my-5">
