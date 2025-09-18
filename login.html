@@ -9,13 +9,9 @@
   <title>Webshop</title>
 </head>
 <body>
-  <div class="my-navbar">
-    <button class="hamburger" aria-label="Meny" aria-expanded="false" aria-controls="navbar-links">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul id="navbar-links">
+
+    <div class="my-navbar">
+    <ul>
       <li class="logo">
         <a href="index.html">
           <img src="/Img/logo.svg" alt="logo">
@@ -26,13 +22,12 @@
       <li><a href="contact.html">Kontakt</a></li>
       <li><a href="login.html">Logga in</a></li>
     </ul>
-    <div class="cart-container">
-      <img src="Img/cart.svg" alt="Kundvagn" width="36" onclick="location.href='cart.html'" style="cursor: pointer;">
-      <div id="cart-count" class="cart-count">0</div>
-    </div>
+    <img src="Img/cart.svg" alt="" width="3%" onclick="location.href='cart.html'" style="cursor: pointer; margin-right: 2vw;">
+    <div id="cart-count" class="cart-count">0</div>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+</body>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
   <div class="card border-warning shadow-sm text-center" style="width: 22rem;">
     <div class="card-body">
       <h2 class="card-title mb-4">Logga in</h2>
@@ -51,7 +46,6 @@
       </form>
     </div>
   </div>
-  </div>
-  <script src="webshop.js"></script>
-</body>
+</div>
+<script src="webshop.js"></script>
 </html>
