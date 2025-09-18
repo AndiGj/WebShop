@@ -289,3 +289,22 @@ footer {
   }
 }
 
+#checkout-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#checkout-button:hover {
+  background-color: #0056b3;
+}
+
+#checkout-container {
+  margin-top: 20px;
+}
+

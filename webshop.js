@@ -166,9 +166,8 @@ document.getElementById('loginForm')?.addEventListener('submit', async function(
   }
 });
 
-
 // Signup form logic
-document.getElementById('signupForm').addEventListener('submit', async function(e) {
+document.getElementById('signupForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const email = document.getElementById('email').value.trim();
   const username = document.getElementById('username').value.trim();
@@ -191,5 +190,90 @@ document.getElementById('signupForm').addEventListener('submit', async function(
   } else {
     errorP.style.color = 'red';
     errorP.textContent = data.error || 'Kunde inte skapa konto';
+  }
+});
+
+// Helpers to build and download a text receipt
+function formatKr(value) {
+  return `${Number(value).toLocaleString('sv-SE')} kr`;
+}
+
+function generateReceiptText(cartItems) {
+  const now = new Date();
+  const timestamp = now.toLocaleString('sv-SE');
+  const orderId = now.getTime();
+
+  // Group identical products to show quantity
+  const grouped = {};
+  cartItems.forEach(snack => {
+    const key = `${snack.märke}|${snack.smak}|${snack.storlek}|${snack.price}`;
+    if (!grouped[key]) grouped[key] = { snack, qty: 0 };
+    grouped[key].qty += 1;
+  });
+
+  const lines = [];
+  lines.push('Kvitto - WebShop');
+  lines.push(`Datum: ${timestamp}`);
+  lines.push(`Ordernummer: ${orderId}`);
+  lines.push('----------------------------------------');
+
+  let totalItems = 0;
+  let totalSum = 0;
+
+  Object.values(grouped).forEach(({ snack, qty }) => {
+    const price = Number(snack.price);
+    const lineTotal = price * qty;
+    totalItems += qty;
+    totalSum += lineTotal;
+    lines.push(`${qty} x ${snack.märke} - ${snack.smak}, ${snack.storlek} @ ${formatKr(price)} = ${formatKr(lineTotal)}`);
+  });
+
+  lines.push('----------------------------------------');
+  lines.push(`Antal varor: ${totalItems}`);
+  lines.push(`Totalsumma: ${formatKr(totalSum)}`);
+  lines.push('');
+  lines.push('Tack för ditt köp!');
+
+  return lines.join('\n');
+}
+
+function downloadReceipt(text) {
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+
+  const now = new Date();
+  const name = `kvitto-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}-${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}.txt`;
+
+  a.href = url;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+// Checkout button functionality
+document.getElementById('checkout-button')?.addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert('Din kundvagn är tom. Lägg till produkter innan du går till kassan.');
+    return;
+  }
+
+  const confirmCheckout = confirm('Vill du gå vidare till kassan?');
+  if (confirmCheckout) {
+    // Build and download receipt before clearing the cart
+    const receiptText = generateReceiptText(cart);
+    downloadReceipt(receiptText);
+
+    // Clear cart
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    const itemsEl = document.getElementById('cart-items');
+    if (itemsEl) itemsEl.innerHTML = '';
+    updateCartTotal();
+    updateCartCount();
+
+    alert('Tack för ditt köp! Kvitto har laddats ner.');
   }
 });
