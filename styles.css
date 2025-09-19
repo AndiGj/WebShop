@@ -68,8 +68,8 @@ body {
   justify-content: center;
   font-size: 1rem;       
   font-weight: bold;
-  line-height: 1;         /* fixar vertikal centrering */
-  padding: 0.1%;           /* liten buffert så texten inte kläms */
+  line-height: 1;         
+  padding: 0.1%;           
 }
 .home-container {
   display: flex;
@@ -81,6 +81,77 @@ body {
   padding-right: 10%;
   font-size: 1.5vw;
   color: #000000;
+}
+
+main {
+  max-width: 1000px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* === Om oss sektionen === */
+.about {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeIn 1.2s ease;
+}
+
+.about h1 {
+  font-size: 2.8rem;
+  color: #4b2405; 
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+/* === Värderingar === */
+.values {
+  text-align: center;
+}
+
+.values h2 {
+  font-size: 2rem;
+  color: #4b2405;
+  margin-bottom: 2rem;
+}
+
+.values ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.values li {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 15px;
+  font-size: 1.05rem;
+  color: #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.values li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .highlight {
